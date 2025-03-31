@@ -44,6 +44,13 @@ modules:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
 
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - CaskaydiaCove
+        - FiraCode
+        - UbuntuSans
+
   - type: gnome-extensions
     install:
       - Night Theme Switcher
