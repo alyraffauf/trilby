@@ -63,7 +63,7 @@ modules:
   - type: gnome-extensions
     install:
       - Night Theme Switcher
-      - AppIndicator and KStatusNotifierItem Support
+      # - AppIndicator and KStatusNotifierItem Support
       - 307 # Dash-to-Dock
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
