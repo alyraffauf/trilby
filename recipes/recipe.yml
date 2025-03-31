@@ -12,10 +12,10 @@ image-version: 42 # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  - type: akmods
-    base: bazzite # if not specified, classic "main" base is used by default
-    install:
-      - v4l2loopback
+  # - type: akmods
+  #   base: bazzite # if not specified, classic "main" base is used by default
+  #   install:
+  #     - v4l2loopback
 
   - type: brew
     nofile-limits: true # increase nofile limits
