@@ -50,7 +50,6 @@ modules:
       - gnome-font-viewer
       - gnome-logs
       - gnome-music
-      - gnome-photos
       - gnome-system-monitor
       - gnome-text-editor
       - gnome-tweaks
