@@ -23,6 +23,10 @@ modules:
       - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
     install:
       - ghostty
+      - gnome-tweaks
+      - inxi
+      - lm_sensors
+      - solaar
       - steam-devices
       - tailscale
     remove:
