@@ -23,7 +23,6 @@ modules:
       - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
     install:
       - ghostty
-      - gnome-shell-extension-dash-to-dock
       - gnome-tweaks
       - inxi
       - lm_sensors
@@ -44,6 +43,12 @@ modules:
       remove:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
+
+  - type: gnome-extensions
+    install:
+      - Night Theme Switcher
+      - AppIndicator and KStatusNotifierItem Support
+      - 307 # Dash-to-Dock
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
