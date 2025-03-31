@@ -17,6 +17,11 @@ modules:
   #   install:
   #     - v4l2loopback
 
+  - type: bling
+    install:
+      - dconf-update-service
+      # - rpmfusion
+
   - type: brew
     nofile-limits: true # increase nofile limits
     brew-analytics: false # disable telemetry
@@ -31,14 +36,35 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/pgdev/ghostty/repo/fedora-%OS_VERSION%/pgdev-ghostty-fedora-%OS_VERSION%.repo
       - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
     install:
+      - baobab
       - epiphany
+      - evince
       - ghostty
+      - gnome-calculator
+      - gnome-calendar
+      - gnome-characters
+      - gnome-clocks
+      - gnome-connections
+      - gnome-contacts
+      - gnome-disk-utility
+      - gnome-font-viewer
+      - gnome-logs
+      - gnome-music
+      - gnome-photos
+      - gnome-system-monitor
+      - gnome-text-editor
       - gnome-tweaks
+      - gnome-weather
       - inxi
       - lm_sensors
+      - loupe
+      - snapshot
       - solaar
       - steam-devices
+      - sushi
       - tailscale
+      - totem
+
     remove:
       - firefox
       - firefox-langpacks
@@ -48,23 +74,6 @@ modules:
     system:
       # If no repo information is specified, Flathub will be used by default
       install:
-        - org.gnome.baobab
-        - org.gnome.Calculator
-        - org.gnome.Calendar
-        - org.gnome.Characters
-        - org.gnome.clocks
-        - org.gnome.Connections
-        - org.gnome.Contacts
-        - org.gnome.Evince
-        - org.gnome.Logs
-        - org.gnome.Loupe
-        - org.gnome.Music
-        - org.gnome.NautilusPreviewer
-        - org.gnome.Photos
-        - org.gnome.Snapshot
-        - org.gnome.TextEditor
-        - org.gnome.Totem
-        - org.gnome.Weather
         - org.mozilla.firefox
       remove:
         - org.gnome.eog
