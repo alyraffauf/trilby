@@ -31,6 +31,7 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/pgdev/ghostty/repo/fedora-%OS_VERSION%/pgdev-ghostty-fedora-%OS_VERSION%.repo
       - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
     install:
+      - epiphany
       - ghostty
       - gnome-tweaks
       - inxi
@@ -65,6 +66,10 @@ modules:
       - Night Theme Switcher
       # - AppIndicator and KStatusNotifierItem Support
       - 307 # Dash-to-Dock
+
+  - type: gschema-overrides
+    include:
+      - zz1-trilby.gschema.override
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
