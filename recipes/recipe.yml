@@ -48,8 +48,24 @@ modules:
     system:
       # If no repo information is specified, Flathub will be used by default
       install:
-        - org.mozilla.firefox
+        - org.gnome.baobab
+        - org.gnome.Calculator
+        - org.gnome.Calendar
+        - org.gnome.Characters
+        - org.gnome.clocks
+        - org.gnome.Connections
+        - org.gnome.Contacts
+        - org.gnome.Evince
+        - org.gnome.Logs
         - org.gnome.Loupe
+        - org.gnome.Music
+        - org.gnome.NautilusPreviewer
+        - org.gnome.Photos
+        - org.gnome.Snapshot
+        - org.gnome.TextEditor
+        - org.gnome.Totem
+        - org.gnome.Weather
+        - org.mozilla.firefox
       remove:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
