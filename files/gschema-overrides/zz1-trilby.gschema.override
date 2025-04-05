@@ -22,6 +22,12 @@ tap-to-click=true
 [org.gnome.desktop.wm.preferences]
 titlebar-font='UbuntuSans Nerd Font Bold 12'
 
+[org.gnome.shell]
+enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'nightthemeswitcher@romainvigier.fr', 'dash-to-dock@micxgx.gmail.com']
+
+[org.gnome.shell.extensions.dash-to-dock]
+apply-custom-theme=true
+
 [org.gtk.settings.file-chooser]
 sort-directories-first=true
 
