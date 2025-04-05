@@ -67,6 +67,7 @@ modules:
     remove:
       - firefox
       - firefox-langpacks
+      - nvtop
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
