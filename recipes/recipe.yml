@@ -50,6 +50,10 @@ modules:
       - gnome-font-viewer
       - gnome-logs
       - gnome-music
+      - gnome-shell-extension-appindicator
+      - gnome-shell-extension-caffeine
+      - gnome-shell-extension-dash-to-dock
+      - gnome-extensions-app
       - gnome-system-monitor
       - gnome-text-editor
       - gnome-tweaks
@@ -86,8 +90,6 @@ modules:
   - type: gnome-extensions
     install:
       - Night Theme Switcher
-      # - AppIndicator and KStatusNotifierItem Support
-      - 307 # Dash-to-Dock
 
   - type: gschema-overrides
     include:
