@@ -5,6 +5,9 @@ enabled-extensions = ['appindicatorsupport@rgcjonas.gmail.com', 'nightthemeswitc
 [org.gnome.desktop.interface]
 clock-format="12h"
 enable-hot-corners=true
+font-name='UbuntuSans Nerd Font Regular 12'
+document-font-name='UbuntuSans Nerd Font Regular 12'
+monospace-font-name='CaskaydiaCove Nerd Font Regular 12'
 
 [org.gnome.desktop.datetime]
 automatic-timezone=true
@@ -15,6 +18,9 @@ natural-scroll=true
 
 [org.gnome.desktop.peripherals.touchpad:GNOME-Greeter]
 tap-to-click=true
+
+[org.gnome.desktop.wm.preferences]
+titlebar-font='UbuntuSans Nerd Font Bold 12'
 
 [org.gtk.settings.file-chooser]
 sort-directories-first=true
