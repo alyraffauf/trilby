@@ -1,20 +1,17 @@
-[org.gnome.shell] 
-favorite-apps = ['org.gnome.Epiphany.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop']
-enabled-extensions = ['appindicatorsupport@rgcjonas.gmail.com', 'nightthemeswitcher@romainvigier.fr']
-
-[org.gnome.desktop.interface]
-clock-format="12h"
-enable-hot-corners=true
-font-name='UbuntuSans Nerd Font Regular 12'
-document-font-name='UbuntuSans Nerd Font Regular 12'
-monospace-font-name='CaskaydiaCove Nerd Font Regular 12'
-
 [org.gnome.desktop.datetime]
 automatic-timezone=true
 
+[org.gnome.desktop.interface]
+accent-color='purple'
+clock-format="12h"
+document-font-name='UbuntuSans Nerd Font Regular 12'
+enable-hot-corners=true
+font-name='UbuntuSans Nerd Font Regular 12'
+monospace-font-name='CaskaydiaCove Nerd Font Regular 12'
+
 [org.gnome.desktop.peripherals.touchpad]
-tap-to-click=true
 natural-scroll=true
+tap-to-click=true
 
 [org.gnome.desktop.peripherals.touchpad:GNOME-Greeter]
 tap-to-click=true
@@ -22,17 +19,31 @@ tap-to-click=true
 [org.gnome.desktop.wm.preferences]
 titlebar-font='UbuntuSans Nerd Font Bold 12'
 
+[org.gnome.mutter]
+center-new-windows=true
+experimental-features=['variable-refresh-rate', 'scale-monitor-framebuffer', 'xwayland-native-scaling']
+
 [org.gnome.shell]
 enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'nightthemeswitcher@romainvigier.fr', 'dash-to-dock@micxgx.gmail.com']
+favorite-apps = ['org.gnome.Epiphany.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop']
+
+[org.gnome.shell.extensions.appindicator]
+legacy-tray-enabled=false
 
 [org.gnome.shell.extensions.dash-to-dock]
 apply-custom-theme=true
 
-[org.gtk.settings.file-chooser]
+[org.gnome.system.location]
+enabled=true
+
+[org.gtk.Settings.FileChooser]
+sort-directories-first=true
+
+[org.gtk.gtk4.Settings.FileChooser]
 sort-directories-first=true
 
 [org.gtk.gtk4.settings.file-chooser]
 sort-directories-first=true
 
-[org.gnome.system.location]
-enabled=true
+[org.gtk.settings.file-chooser]
+sort-directories-first=true
