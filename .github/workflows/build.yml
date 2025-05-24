@@ -1,19 +1,18 @@
 name: bluebuild
+
 on:
   schedule:
-    - cron:
-        "00 06 * * *" # build at 06:00 UTC every day
-        # (20 minutes after last ublue images start building)
+    - cron: "00 06 * * *" # build at 06:00 UTC every day
   push:
-    paths-ignore: # don't rebuild if only documentation has changed
+    paths-ignore:
       - "**.md"
-
   pull_request:
-  workflow_dispatch: # allow manually triggering builds
+  workflow_dispatch:
+
 concurrency:
-  # only run one build at a time
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
   cancel-in-progress: true
+
 jobs:
   bluebuild:
     name: Build Custom Image
@@ -23,21 +22,35 @@ jobs:
       packages: write
       id-token: write
     strategy:
-      fail-fast: false # stop GH from cancelling all matrix builds if one fails
+      fail-fast: false
       matrix:
         recipe:
-          # !! Add your recipes here
           - recipe.yml
     steps:
-      # the build is fully handled by the reusable github action
+      - name: Set registry
+        id: registry
+        run: |
+          if [[ "$GITHUB_SERVER_URL" == "https://github.com" ]]; then
+            echo "value=ghcr.io" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=git.aly.codes" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set registry token
+        id: registry_token
+        run: |
+          if [[ "$GITHUB_SERVER_URL" == "https://github.com" ]]; then
+            echo "value=${{ github.token }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=${{ secrets.OCI_TOKEN }}" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Build Custom Image
         uses: blue-build/github-action@v1.8
         with:
           recipe: ${{ matrix.recipe }}
           cosign_private_key: ${{ secrets.SIGNING_SECRET }}
-          registry_token: ${{ github.token }}
-          registry: git.aly.codes
+          registry: ${{ steps.registry.outputs.value }}
+          registry_token: ${{ steps.registry_token.outputs.value }}
           pr_event_number: ${{ github.event.number }}
-
-          # enabled by default, disable if your image is small and you want faster builds
           maximize_build_space: true
